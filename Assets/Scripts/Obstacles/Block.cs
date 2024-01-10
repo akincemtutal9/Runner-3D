@@ -29,7 +29,7 @@ public class Block : MonoBehaviour
         blockMesh.material = blockColor[colorIndex];
     }
 
-    public void CheckHit()
+    public bool CheckHit()
     {
         Handheld.Vibrate();
         Camera.main.transform.DOShakePosition(0.1f, 0.5f, 5);
@@ -41,10 +41,14 @@ public class Block : MonoBehaviour
             completeBlock.SetActive(false);
             brokenBlock.SetActive(true);
             blockSizeText.gameObject.SetActive(false);
+            AudioManager.instance.PlayRockSound();
+            return true;
         }
         else
         {
+            AudioManager.instance.PlayBadSound();
             GameEvents.instance.gameLost.SetValueAndForceNotify(true);
+            return false;
         }
     }
 }

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Gate : MonoBehaviour
 {
-    private enum OperationType
+    public enum OperationType
     { 
         addition,
         difference,
@@ -13,6 +13,7 @@ public class Gate : MonoBehaviour
 
     [Header("Operation")]
     [SerializeField] private OperationType gateOperation;
+    public OperationType GateOperation { get => gateOperation; }
     [SerializeField] private int value;
 
     [Header("References")]
@@ -47,17 +48,35 @@ public class Gate : MonoBehaviour
     }
 
     public void ExecuteOperation()
+{
+    switch (gateOperation)
     {
-        if (gateOperation == OperationType.addition)
+        case OperationType.addition:
             GameEvents.instance.playerSize.Value += value;
-        if (gateOperation == OperationType.difference)
-            GameEvents.instance.playerSize.Value -= value;
-        if (gateOperation == OperationType.multiplication)
-            GameEvents.instance.playerSize.Value *= value;
-        if (gateOperation == OperationType.division)
-            GameEvents.instance.playerSize.Value /= value;
+            AudioManager.instance.PlayPositiveSound();
+            break;
 
-        GetComponent<BoxCollider>().enabled = false;
-        forceField.gameObject.SetActive(false);
+        case OperationType.difference:
+            GameEvents.instance.playerSize.Value -= value;
+            AudioManager.instance.PlayBadSound();
+            break;
+
+        case OperationType.multiplication:
+            GameEvents.instance.playerSize.Value *= value;
+            AudioManager.instance.PlayPositiveSound();
+            break;
+
+        case OperationType.division:
+            GameEvents.instance.playerSize.Value /= value;
+            AudioManager.instance.PlayBadSound();
+            break;
+
+        default:
+            break;
     }
+
+    GetComponent<BoxCollider>().enabled = false;
+    forceField.gameObject.SetActive(false);
+}
+
 }

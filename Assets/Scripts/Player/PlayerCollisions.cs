@@ -28,6 +28,7 @@ public class PlayerCollisions : MonoBehaviour
         case Tags.Size:
             GameEvents.instance.playerSize.Value += 1;
             other.GetComponent<Collider>().enabled = false;
+            AudioManager.instance.PlayHealthSound();
             other.transform.DOScale(Vector3.zero, 0.5f).OnComplete(() =>
             {
                 Destroy(other.gameObject);
@@ -56,6 +57,7 @@ public class PlayerCollisions : MonoBehaviour
         case Tags.Gem:
             GameEvents.instance.gemCollected.Value += 1;
             other.GetComponent<Collider>().enabled = false;
+            AudioManager.instance.PlayGemSound();
             other.transform.DOScale(Vector3.zero, 0.5f).OnComplete(() =>
             {
                 Destroy(other.gameObject);

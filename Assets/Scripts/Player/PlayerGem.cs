@@ -19,7 +19,6 @@ public class PlayerGem : MonoBehaviour
             .Subscribe(value =>
             {
                 currentGem = value;
-
             })
             .AddTo(subscriptions);
 
@@ -37,4 +36,7 @@ public class PlayerGem : MonoBehaviour
     {
         subscriptions.Clear();
     }
+
+    
+
 }
