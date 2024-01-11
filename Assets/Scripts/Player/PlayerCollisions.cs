@@ -8,6 +8,7 @@ public static class Tags
     public const string Saw = nameof(Saw);
     public const string Finish = nameof(Finish);
     public const string Gem = nameof(Gem);
+    public const string Hammer = nameof(Hammer);
 }
 
 
@@ -63,6 +64,13 @@ public class PlayerCollisions : MonoBehaviour
                 Destroy(other.gameObject);
             });
             break;
+            
+        case Tags.Hammer:
+            GameEvents.instance.gameLost.SetValueAndForceNotify(true);
+            bloodParticles.SetActive(true);
+            GetComponent<Collider>().enabled = false;
+            break;    
+
     }
 }
 

@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Gem
+  - Gate
+  - Saw
+  - Size
+  - Obstacle
+  - Hammer
   layers:
   - Default
   - TransparentFX
