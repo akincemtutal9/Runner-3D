@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5699477140764629710}
   - component: {fileID: 4391316913873237774}
+  - component: {fileID: 815616910201458547}
   m_Layer: 0
   m_Name: Hammer
   m_TagString: Hammer
@@ -25,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 50117920847459714}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -34,7 +35,7 @@ Transform:
   - {fileID: 922944978684416189}
   - {fileID: 110911061950159838}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4391316913873237774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47,8 +48,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ec0f854b0c42a74d819224329a19a94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 110911061950159838}
-  rotationSpeed: 90
+--- !u!95 &815616910201458547
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 50117920847459714}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7c35e4fd320ea384bbed23b1565c6be1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &50404713970205028
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,7 +202,7 @@ Transform:
   m_GameObject: {fileID: 64555333275834371}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -291,7 +311,7 @@ Transform:
   m_GameObject: {fileID: 6434143954659936902}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -501,7 +521,7 @@ Transform:
   m_GameObject: {fileID: 8250992629851705428}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.25, y: 0, z: 0}
+  m_LocalPosition: {x: 0.75, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
