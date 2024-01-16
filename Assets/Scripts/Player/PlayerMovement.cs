@@ -65,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         float delta = _finalPos - _currentPos;
-        _currentPos += (delta * Time.deltaTime * sidewaySpeed);
+        _currentPos += delta * Time.deltaTime * sidewaySpeed;
         _currentPos = Mathf.Clamp(_currentPos, -limitX, limitX);
         playerModel.localPosition = new Vector3(0, _currentPos, 0);
     }

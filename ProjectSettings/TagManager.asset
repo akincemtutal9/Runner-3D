@@ -10,6 +10,7 @@ TagManager:
   - Size
   - Obstacle
   - Hammer
+  - Banner
   layers:
   - Default
   - TransparentFX

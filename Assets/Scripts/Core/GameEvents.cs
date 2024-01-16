@@ -25,7 +25,7 @@ public class GameEvents : MonoBehaviour
                 if (value <= 0)
                     gameLost.SetValueAndForceNotify(true);
             })
-            .AddTo(subscriptions);
+            .AddTo(subscriptions);    
     }
     private void OnDisable()
     {
